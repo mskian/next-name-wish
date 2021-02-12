@@ -1,11 +1,21 @@
 User-agent: *
-Disallow: /
+Disallow: /ghost/
+Disallow: /p/
 
-User-agent: Twitterbot
-Disallow: /
+User-agent: NinjaBot
+Allow: /
 
-User-agent: facebookexternalhit
-Disallow: /
+User-agent: Mediapartners-Google*
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /content/images/
+
+User-agent: Adsbot-Google
+Allow: /
+ 
+User-agent: Googlebot-Mobile
+Allow: /
 
 User-agent: SemrushBot
 Disallow: /

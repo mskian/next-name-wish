@@ -6,7 +6,7 @@ Friendship Day Wishes - Name Wishing Site for Friendship day Build using Next JS
 
 ⚠ This Web App Still in Development Stage Not Recommended for Production Usage.  
 
-⚛ React + Next JS | 📦 API Routing | ⚡ SSG | 🌩 Vercel  
+⚛ React + Next JS | 📦 API Routing | 🌩 Vercel  
 
 ## Features 🍔
 
@@ -14,6 +14,8 @@ Friendship Day Wishes - Name Wishing Site for Friendship day Build using Next JS
 - Bulma CSS
 - Power Packed with React and Next Modules
 - Next JS API Routing <https://nextjs.org/docs/api-routes/introduction>
+- Next JS `getInitialProps`
+- SEO Friendly URL
 
 ## API 🍪
 
