@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import axios from "axios"
 import { Fade, Bounce, Slide } from "react-awesome-reveal"
 import Typist from "react-typist"
 import { CopyToClipboard } from "react-copy-to-clipboard"
@@ -263,10 +264,10 @@ export default Blog
 
 Blog.getInitialProps = async context => {
   const { blog } = context.query
-  const res = await fetch(
+  const res = await axios(
     "https://wish.sanweb.info/api/wish/" + encodeURIComponent(blog)
   )
-  const data = await res.json()
+  const data = await res.data
 
   return { santhosh: data }
 }
