@@ -1,8 +1,9 @@
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
 import axios from "axios"
+import { useState } from "react"
 import { Fade, Bounce, Slide } from "react-awesome-reveal"
+import slugify from "slugify"
 import Typist from "react-typist"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import { ToastContainer, toast } from "react-toastify"
@@ -10,16 +11,6 @@ import "react-toastify/dist/ReactToastify.css"
 
 const Blog = ({ santhosh }) => {
   const wishername = santhosh[0].content
-  toast.success("😊 \n" + wishername, {
-    position: "top-right",
-    autoClose: 2500,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    closeButton: false,
-  })
   const slugname = santhosh[0].slug
   const pathname = "https://wish.sanweb.info/" + slugname + "/"
   const sharetext = encodeURIComponent(
@@ -43,6 +34,42 @@ const Blog = ({ santhosh }) => {
       progress: undefined,
       closeButton: false,
     })
+  }
+  //toast.success("😊 \n" + wishername, {
+  //  position: "top-right",
+  //  autoClose: 2500,
+  //  hideProgressBar: true,
+  //  closeOnClick: true,
+  //  pauseOnHover: true,
+  //  draggable: true,
+  //  progress: undefined,
+  //  closeButton: false,
+  //})
+  const [username, setInput] = useState("")
+  const subscribe = e => {
+    e.preventDefault()
+    if (username == 0) {
+      console.log("Empty Title or Message")
+      toast.error("🤖 Empty Name", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        closeButton: false,
+      })
+      return false
+    }
+    //const users = encodeURIComponent(input)
+    const users = slugify(username, {
+      replacement: "-",
+      remove: /[*+~.()'"!:@]/g,
+      lower: false,
+      strict: false,
+    })
+    window.location.href = `/${users}/`
   }
   return (
     <section className="section">
@@ -247,11 +274,35 @@ const Blog = ({ santhosh }) => {
             </div>
             <hr />
             <br />
-            <div className="buttons is-centered">
-              <Link href="/">
-                <a className="button is-link read-random">🍔 Create your Own</a>
-              </Link>
+            <div className="notification is-warning has-text-weight-bold">
+              <br />
+              <h3 className="has-text-centered">Create your Wish</h3>
+              <div className="has-text-centered">
+                <small>Enter Your Name</small>
+              </div>
+              <br />
+              <div className="control">
+                <input
+                  className="input"
+                  id="username"
+                  name="username"
+                  type="text"
+                  placeholder="Enter Name"
+                  value={username}
+                  onChange={e => setInput(e.target.value)}
+                  required
+                />
+              </div>
+              <br />
+              <button
+                onClick={subscribe}
+                className="button is-link read-random sign-button"
+                type="submit"
+              >
+                Create Wishes
+              </button>
             </div>
+            <ToastContainer />
             <br />
           </div>
         </div>
