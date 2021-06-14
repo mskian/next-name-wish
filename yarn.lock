@@ -1519,10 +1519,10 @@ raw-body@2.4.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-awesome-reveal@^3.7.2:
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/react-awesome-reveal/-/react-awesome-reveal-3.7.2.tgz#3902498aa03411b8b658430ecd130da12480248f"
-  integrity sha512-WceyYDRbPMmdDnonw3QMha1YBMRNRWMmTbpfy0C3E4tf5p2Ylj2pIN+3npXhJC3pfyP3KGdb1gwlRDcYSfcC7w==
+react-awesome-reveal@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/react-awesome-reveal/-/react-awesome-reveal-3.8.1.tgz#54ae69f835a6654fc096b49df6430138ce3d17f6"
+  integrity sha512-cB+XubgAa7QJ9ibkHePiVGTOzRKokqdDOP+yLfQtw5uu+xsAR/kwktLntMZev+1GBz2NhlcpbYvKqEbVIkKfLw==
   dependencies:
     "@emotion/react" "^11.4.0"
     react-intersection-observer "^8.32.0"
